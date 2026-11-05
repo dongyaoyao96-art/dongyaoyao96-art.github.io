@@ -235,6 +235,62 @@ body{font-size:var(--reading-text);line-height:1.8}
 @media(max-width:960px){.partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.partner-grid{grid-template-columns:1fr}.partner-card{min-height:0;padding:15px}.partner-groups{gap:26px}}
 
+
+/* Academic footprint infographic */
+.fp-infographic{border-radius:22px;overflow:hidden;background:#fff;border:1px solid #dce6ee;box-shadow:0 12px 38px rgba(31,64,96,.05)}
+.fp-dashboard{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(270px,.8fr);background:#123251}
+.fp-map-shell{min-width:0;background:radial-gradient(ellipse at 67% 15%,#254b72,#102a46 67%);padding:24px 25px 19px;position:relative}
+.fp-map-top,.fp-map-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.fp-map-eyebrow{display:inline-flex;align-items:center;gap:9px;color:#d9e6f1;font-size:13px;font-weight:800;letter-spacing:.08em}
+.fp-map-dot{width:8px;height:8px;background:#e6b765;border-radius:50%;box-shadow:0 0 0 5px rgba(230,183,101,.12)}
+.fp-map-mode{color:#e8d6af;font-size:13px;font-weight:700}
+.fp-map{width:100%;height:auto;display:block;margin:12px auto;overflow:visible}
+.fp-map-grid{stroke:#7ba0c0;stroke-width:.65;opacity:.16;stroke-dasharray:3 6}
+.fp-land{fill:url(#fp-land);opacity:.67;stroke:#7299bb;stroke-width:.65;stroke-linejoin:round}
+.fp-pin{cursor:default;transition:opacity .2s ease,filter .2s ease;outline:none}
+.fp-pin-ring{fill:currentColor;opacity:.19;stroke:currentColor;stroke-width:2}
+.fp-pin-core{fill:currentColor;stroke:#e7f1f7;stroke-width:1.9}
+.fp-pin-count{font-family:Arial, sans-serif;fill:#133451;font-size:13px;text-anchor:middle;font-weight:850;user-select:none;pointer-events:none}
+.fp-pin:hover .fp-pin-ring,.fp-pin:focus .fp-pin-ring{opacity:.42;stroke-width:4}
+.fp-map-place{font-size:16px;font-family:Arial, sans-serif;font-weight:750;paint-order:stroke;stroke:#1b3d60;stroke-width:4px;fill:#f3f8fb;stroke-linejoin:round}
+.fp-color-europe{--fp-color:#f1bf75;color:#f1bf75}.fp-color-asia{--fp-color:#88dbd4;color:#88dbd4}.fp-color-oceania{--fp-color:#c3acf0;color:#c3acf0}.fp-color-america{--fp-color:#8fcaec;color:#8fcaec}
+.fp-map-footer{font-size:12px;color:#b8cadd;line-height:1.55}
+.fp-map-footer-mark{font-size:10px;letter-spacing:.12em;color:#8eaaca}
+.fp-side-panel{color:white;border-left:1px solid rgba(255,255,255,.13);background:linear-gradient(160deg,#183f64,#102c4b);padding:29px 26px;display:grid;align-content:start;gap:10px}
+.fp-side-kicker,.fp-distribution-title{color:#cfdfef;font-size:12px;letter-spacing:.15em;font-weight:750}
+.fp-metric{display:flex;align-items:baseline;gap:13px;padding:3px 0}
+.fp-metric strong{font-family:Georgia,serif;font-size:41px;font-weight:700;line-height:1;color:#f5f8fc;min-width:72px}
+.fp-metric div{font-size:14px;color:#d4e3f0;font-weight:700}
+.fp-side-divider{margin:4px 0;border-top:1px solid rgba(255,255,255,.16)}
+.fp-distribution-title{margin:0 0 6px}
+.fp-bar-row{display:grid;grid-template-columns:minmax(92px,1fr) minmax(60px,1.15fr) 18px;align-items:center;gap:9px;font-size:12px;line-height:1.6;color:#e3edf4;transition:opacity .2s ease}
+.fp-bar-row span{white-space:nowrap}
+.fp-bar-row b{text-align:right;font-size:13px;color:white}
+.fp-track{height:6px;border-radius:100px;background:rgba(255,255,255,.13);overflow:hidden}
+.fp-track i{height:100%;display:block;border-radius:100px;background:var(--fp-color)}
+.fp-lower{padding:22px 24px 27px}
+.fp-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.fp-filter{border:1px solid #d8e4ee;background:#f4f8fb;border-radius:100px;color:#42637d;cursor:pointer;font:750 13px/1.35 inherit;padding:9px 14px;transition:background .2s,border .2s}
+.fp-filter.is-active,.fp-filter:hover{background:#214d75;border-color:#214d75;color:white}
+.fp-filter:focus-visible{outline:3px solid #e2b968;outline-offset:2px}
+.fp-regions{display:grid;grid-template-columns:1.55fr 1fr 1fr 1fr;gap:11px}
+.fp-region-card{background:#f6f9fc;border:1px solid #deE8f1;border-radius:13px;padding:16px 14px;min-width:0;transition:opacity .2s ease,transform .2s ease,box-shadow .2s ease}
+.fp-region-card:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(18,49,81,.08)}
+.fp-region-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.fp-region-label{display:flex;align-items:center;gap:7px;min-width:0}
+.fp-region-dot{width:9px;height:9px;flex:none;background:var(--fp-color);border-radius:50%}
+.fp-region-card h3{font-size:15px;line-height:1.4;color:#214461;margin:0}
+.fp-region-count{font:700 22px Georgia,serif;color:#24587f}
+.fp-city-tags{display:flex;flex-wrap:wrap;gap:7px}
+.fp-city{font-size:13px;font-weight:600;color:#4a6982;line-height:1.45;background:white;border:1px solid #e0e9f0;border-radius:7px;padding:6px 8px;max-width:100%}
+.fp-infographic .fp-dim{opacity:.18}
+.fp-infographic .fp-region-card.fp-dim{opacity:.35}
+.fp-region-card.fp-highlight{border-color:#a8c5dc;box-shadow:0 8px 24px rgba(28,80,121,.08)}
+@media(max-width:1140px){.fp-dashboard{grid-template-columns:minmax(0,1.65fr) minmax(230px,.8fr)}.fp-map-shell{padding:20px}.fp-side-panel{padding:22px 18px}.fp-regions{grid-template-columns:1fr 1fr}}
+@media(max-width:780px){.fp-dashboard{grid-template-columns:1fr}.fp-side-panel{grid-template-columns:repeat(3,1fr);gap:12px;border-left:0;border-top:1px solid rgba(255,255,255,.15)}.fp-side-kicker,.fp-side-divider,.fp-distribution-title,.fp-bar-row{display:none}.fp-metric{display:block}.fp-metric strong{display:block;font-size:31px}.fp-metric div{font-size:12px;margin-top:5px}.fp-map-place{font-size:19px}}
+@media(max-width:520px){.fp-map-shell{padding:16px 11px}.fp-map-mode{font-size:11px}.fp-map-eyebrow{font-size:11px}.fp-map-place{font-size:23px}.fp-map-footer{font-size:11px;padding:0 8px}.fp-map-footer-mark{display:none}.fp-lower{padding:17px 13px}.fp-regions{grid-template-columns:1fr}.fp-filter{padding:9px 11px;font-size:12px}.fp-region-card{padding:14px}}
+@media(prefers-reduced-motion:reduce){.fp-pin,.fp-bar-row,.fp-region-card,.fp-filter{transition:none!important}}
+
 </style>
 <meta content="portrait.webp" property="og:image"/></head>
 <body data-lang="zh"><a class="sr-only" href="#about" id="skip-to-content">Skip to main content / 跳转正文</a>
@@ -336,16 +392,43 @@ body{font-size:var(--reading-text);line-height:1.8}
 <article class="method-card"><div class="method-symbol">03</div><h3><span class="l-zh">案例与跨案例比较</span><span class="l-en">Cross-Case Comparison</span></h3><p><span class="l-zh">从关键迭代事件归纳创造路径、模式及差异。</span><span class="l-en">Comparing iteration events, pathways, and process patterns.</span></p><div class="mini">Qualitative Case Study</div></article>
 <article class="method-card"><div class="method-symbol">04</div><h3><span class="l-zh">任务与评价框架设计</span><span class="l-en">Task &amp; Assessment Design</span></h3><p><span class="l-zh">将创造力理论转化为学习目标、任务和观察指标。</span><span class="l-en">Translating creativity theories into objectives, tasks, and indicators.</span></p><div class="mini">Design-Based Research</div></article>
 </div></div></section>
-<section class="section alt" id="network"><div class="container"><div class="eyebrow">08 / Academic Footprint</div>
+<section class="section alt" id="network"><div class="container">
+<div class="eyebrow">08 / Academic Footprint</div>
 <h2 class="section-title"><span class="l-zh">国际学术交流足迹</span><span class="l-en">International Academic Footprint</span></h2>
-<p class="section-intro"><span class="l-zh">在不同国家和地区开展学术访问、研修与国际交流。</span><span class="l-en">Academic visits, training and scholarly exchange across countries and regions.</span></p>
-<div class="network-grid footprints-only">
-<div class="network-card"><h3><span class="l-zh">到访国家与城市</span><span class="l-en">Countries &amp; Cities Visited</span></h3>
-<div class="footprint-regions"><div class="footprint-region"><h4><span class="l-zh">欧洲</span><span class="l-en">Europe</span></h4><div class="footprint-tags"><span class="footprint-chip"><span class="l-zh">爱尔兰 · 都柏林</span><span class="l-en">Ireland · Dublin</span></span><span class="footprint-chip"><span class="l-zh">法国 · 巴黎</span><span class="l-en">France · Paris</span></span><span class="footprint-chip"><span class="l-zh">荷兰 · 兹沃勒</span><span class="l-en">Netherlands · Zwolle</span></span><span class="footprint-chip"><span class="l-zh">瑞典 · 卡尔斯塔德</span><span class="l-en">Sweden · Karlstad</span></span><span class="footprint-chip"><span class="l-zh">塞尔维亚 · 贝尔格莱德</span><span class="l-en">Serbia · Belgrade</span></span></div></div>
-<div class="footprint-region"><h4><span class="l-zh">亚洲与中东</span><span class="l-en">Asia & Middle East</span></h4><div class="footprint-tags"><span class="footprint-chip"><span class="l-zh">新加坡</span><span class="l-en">Singapore</span></span><span class="footprint-chip"><span class="l-zh">卡塔尔 · 多哈</span><span class="l-en">Qatar · Doha</span></span></div></div>
-<div class="footprint-region"><h4><span class="l-zh">大洋洲</span><span class="l-en">Oceania</span></h4><div class="footprint-tags"><span class="footprint-chip"><span class="l-zh">澳大利亚 · 悉尼</span><span class="l-en">Australia · Sydney</span></span></div></div>
-<div class="footprint-region"><h4><span class="l-zh">北美洲</span><span class="l-en">North America</span></h4><div class="footprint-tags"><span class="footprint-chip"><span class="l-zh">加拿大 · 埃德蒙顿</span><span class="l-en">Canada · Edmonton</span></span></div></div></div></div>
-
+<p class="section-intro"><span class="l-zh">从联合培养与访学到国际学术会议，跨越不同地域，持续拓展数学教育、团队创造力与教育评价的学术交流。</span><span class="l-en">Across joint doctoral training, academic visits and international conferences, my scholarly exchange spans mathematics education, group creativity and educational assessment.</span></p>
+<div class="fp-infographic">
+<div class="fp-dashboard">
+<div class="fp-map-shell">
+<div class="fp-map-top"><span class="fp-map-eyebrow"><span class="fp-map-dot"></span><span class="l-zh">国际交流足迹地图</span><span class="l-en">ACADEMIC FOOTPRINT MAP</span></span><span class="fp-map-mode"><span class="l-zh">9 个国家</span><span class="l-en">9 countries</span></span></div>
+<svg class="fp-map" viewBox="0 0 940 380" role="img" aria-label="世界地图，标示欧洲、加拿大、卡塔尔、新加坡和澳大利亚的学术交流地点" preserveAspectRatio="xMidYMid meet">
+<defs><linearGradient id="fp-land" x1="0" y1="0" x2=".75" y2="1"><stop offset="0%" stop-color="#668ba8"/><stop offset="100%" stop-color="#3f6485"/></linearGradient></defs>
+<g class="fp-map-grid"><line x1="0" y1="45" x2="940" y2="45"/><line x1="0" y1="95" x2="940" y2="95"/><line x1="0" y1="145" x2="940" y2="145"/><line x1="0" y1="195" x2="940" y2="195"/><line x1="0" y1="245" x2="940" y2="245"/><line x1="0" y1="295" x2="940" y2="295"/><line x1="0" y1="345" x2="940" y2="345"/><line x1="80" y1="0" x2="80" y2="380"/><line x1="160" y1="0" x2="160" y2="380"/><line x1="240" y1="0" x2="240" y2="380"/><line x1="320" y1="0" x2="320" y2="380"/><line x1="400" y1="0" x2="400" y2="380"/><line x1="480" y1="0" x2="480" y2="380"/><line x1="560" y1="0" x2="560" y2="380"/><line x1="640" y1="0" x2="640" y2="380"/><line x1="720" y1="0" x2="720" y2="380"/><line x1="800" y1="0" x2="800" y2="380"/><line x1="880" y1="0" x2="880" y2="380"/></g>
+<path class="fp-land" d="M265,204L259,207L242,191L200,177L170,140L184,164L177,159L145,117L144,95L150,98L149,93L120,68L86,60L74,65L77,59L56,74L40,78L60,66L38,61L50,50L31,47L48,46L35,40L61,32L219,43L224,38L218,32L225,31L242,43L247,36L258,39L224,60L229,71L255,76L261,87L262,77L270,72L266,57L277,56L293,68L301,62L324,81L313,90L297,90L284,99L300,92L302,100L305,102L309,101L312,98L314,101L299,108L302,103L295,104L272,125L271,120L272,130L258,141L260,158L244,144L216,152L220,175L243,168L238,183L252,185L255,202L269,203L283,193L283,202L287,194L308,198L307,200L321,211L336,215L343,230L378,242L363,287L346,295L330,321L317,320L322,328L300,339L304,343L294,351L298,358L289,366L292,370L289,370L285,372L285,374L274,370L272,354L280,343L276,345L287,281L258,244L259,230L269,216L265,204Z M444,212L427,194L426,167L455,129L495,125L497,135L520,144L526,137L558,142L564,127L542,127L538,119L558,112L579,113L566,103L572,98L558,106L550,100L542,111L545,115L529,117L533,124L529,127L521,113L504,102L503,106L518,117L512,123L493,106L478,109L464,127L447,126L445,109L466,107L458,94L491,81L492,71L498,69L499,79L521,78L526,70L533,71L531,65L546,63L526,61L526,54L536,49L532,46L517,55L519,63L511,74L504,76L497,64L485,67L483,57L520,36L544,32L577,42L557,45L567,52L585,46L583,39L591,45L628,36L649,41L644,33L653,27L660,29L659,46L666,42L661,32L665,28L683,31L680,26L742,14L768,20L756,24L802,26L813,33L837,28L940,38L940,49L933,50L938,57L897,63L893,77L879,87L877,72L899,56L879,59L875,65L841,66L823,77L839,84L831,100L803,118L807,131L800,133L797,119L786,121L788,115L778,120L789,125L781,131L788,150L773,165L746,173L755,190L745,203L731,190L729,202L742,223L727,206L724,181L716,183L709,165L680,183L672,205L660,169L654,170L643,157L620,157L618,153L605,151L601,144L595,145L605,161L617,155L626,166L614,180L584,192L561,146L559,151L555,145L582,195L603,198L572,240L575,271L561,281L563,293L537,320L518,320L510,301L500,272L505,250L493,230L492,214L444,212Z M813,313L770,320L767,288L786,281L798,266L808,268L816,257L826,259L824,268L836,275L842,256L871,304L862,329L852,334L837,331L831,321L827,323L830,317L825,322L813,313Z"/>
+<g class="fp-map-pins"><g class="fp-pin fp-color-america" data-region="america" transform="translate(174 81)" tabindex="0" aria-label="埃德蒙顿"><title>埃德蒙顿 / Edmonton</title><circle class="fp-pin-ring" r="18"/><circle class="fp-pin-core" r="12"/><text class="fp-pin-count" dy=".34em">1</text></g><text class="fp-map-place fp-place-america" data-region="america" x="149" y="116">Edmonton</text>
+<g class="fp-pin fp-color-europe" data-region="europe" transform="translate(492 86)" tabindex="0" aria-label="欧洲5地"><title>欧洲5地 / Europe · 5</title><circle class="fp-pin-ring" r="18"/><circle class="fp-pin-core" r="12"/><text class="fp-pin-count" dy=".34em">5</text></g><text class="fp-map-place fp-place-europe" data-region="europe" x="502" y="124">Europe · 5</text>
+<g class="fp-pin fp-color-asia" data-region="asia" transform="translate(605 158)" tabindex="0" aria-label="多哈"><title>多哈 / Doha</title><circle class="fp-pin-ring" r="18"/><circle class="fp-pin-core" r="12"/><text class="fp-pin-count" dy=".34em">1</text></g><text class="fp-map-place fp-place-asia" data-region="asia" x="622" y="160">Doha</text>
+<g class="fp-pin fp-color-asia" data-region="asia" transform="translate(741 224)" tabindex="0" aria-label="新加坡"><title>新加坡 / Singapore</title><circle class="fp-pin-ring" r="18"/><circle class="fp-pin-core" r="12"/><text class="fp-pin-count" dy=".34em">1</text></g><text class="fp-map-place fp-place-asia" data-region="asia" x="745" y="260">Singapore</text>
+<g class="fp-pin fp-color-oceania" data-region="oceania" transform="translate(864 320)" tabindex="0" aria-label="悉尼"><title>悉尼 / Sydney</title><circle class="fp-pin-ring" r="18"/><circle class="fp-pin-core" r="12"/><text class="fp-pin-count" dy=".34em">1</text></g><text class="fp-map-place fp-place-oceania" data-region="oceania" x="830" y="347">Sydney</text></g>
+</svg>
+<div class="fp-map-footer"><span><span class="l-zh">数字为区域地点数；欧洲5地合并标记</span><span class="l-en">Numbers show places; five European destinations share one marker</span></span><span class="fp-map-footer-mark">YA OYAO · 2026</span></div>
+</div>
+<div class="fp-side-panel">
+<div class="fp-side-kicker"><span class="l-zh">足迹概览</span><span class="l-en">AT A GLANCE</span></div>
+<div class="fp-metric"><strong>09</strong><div><span class="l-zh">到访国家</span><span class="l-en">Countries</span></div></div>
+<div class="fp-metric"><strong>09</strong><div><span class="l-zh">交流地点</span><span class="l-en">Destinations</span></div></div>
+<div class="fp-metric"><strong>04</strong><div><span class="l-zh">区域分组</span><span class="l-en">Regions</span></div></div>
+<div class="fp-side-divider"></div>
+<div class="fp-distribution-title"><span class="l-zh">地区分布</span><span class="l-en">BY REGION</span></div>
+<div class="fp-bar-row fp-color-europe" data-region="europe"><span><span class="l-zh">欧洲</span><span class="l-en">Europe</span></span><div class="fp-track"><i style="width:55.55555555555556%"></i></div><b>5</b></div><div class="fp-bar-row fp-color-asia" data-region="asia"><span><span class="l-zh">亚洲与中东</span><span class="l-en">Asia & Middle East</span></span><div class="fp-track"><i style="width:22.22222222222222%"></i></div><b>2</b></div><div class="fp-bar-row fp-color-oceania" data-region="oceania"><span><span class="l-zh">大洋洲</span><span class="l-en">Oceania</span></span><div class="fp-track"><i style="width:11.11111111111111%"></i></div><b>1</b></div><div class="fp-bar-row fp-color-america" data-region="america"><span><span class="l-zh">北美洲</span><span class="l-en">North America</span></span><div class="fp-track"><i style="width:11.11111111111111%"></i></div><b>1</b></div>
+</div>
+</div>
+<div class="fp-lower">
+<div class="fp-filters" role="group" aria-label="按地区突出显示交流地点"><button type="button" class="fp-filter is-active" data-region="all" aria-pressed="true"><span class="l-zh">全部</span><span class="l-en">All</span></button><button type="button" class="fp-filter" data-region="europe" aria-pressed="false"><span class="l-zh">欧洲</span><span class="l-en">Europe</span></button><button type="button" class="fp-filter" data-region="asia" aria-pressed="false"><span class="l-zh">亚洲与中东</span><span class="l-en">Asia & Middle East</span></button><button type="button" class="fp-filter" data-region="oceania" aria-pressed="false"><span class="l-zh">大洋洲</span><span class="l-en">Oceania</span></button><button type="button" class="fp-filter" data-region="america" aria-pressed="false"><span class="l-zh">北美洲</span><span class="l-en">North America</span></button></div>
+<div class="fp-regions"><article class="fp-region-card fp-color-europe" data-region="europe"><div class="fp-region-header"><div class="fp-region-label"><span class="fp-region-dot"></span><h3><span class="l-zh">欧洲</span><span class="l-en">Europe</span></h3></div><span class="fp-region-count">5</span></div><div class="fp-city-tags"><span class="fp-city"><span class="l-zh">爱尔兰 · 都柏林</span><span class="l-en">Ireland · Dublin</span></span><span class="fp-city"><span class="l-zh">法国 · 巴黎</span><span class="l-en">France · Paris</span></span><span class="fp-city"><span class="l-zh">荷兰 · 兹沃勒</span><span class="l-en">Netherlands · Zwolle</span></span><span class="fp-city"><span class="l-zh">瑞典 · 卡尔斯塔德</span><span class="l-en">Sweden · Karlstad</span></span><span class="fp-city"><span class="l-zh">塞尔维亚 · 贝尔格莱德</span><span class="l-en">Serbia · Belgrade</span></span></div></article>
+<article class="fp-region-card fp-color-asia" data-region="asia"><div class="fp-region-header"><div class="fp-region-label"><span class="fp-region-dot"></span><h3><span class="l-zh">亚洲与中东</span><span class="l-en">Asia & Middle East</span></h3></div><span class="fp-region-count">2</span></div><div class="fp-city-tags"><span class="fp-city"><span class="l-zh">新加坡</span><span class="l-en">Singapore</span></span><span class="fp-city"><span class="l-zh">卡塔尔 · 多哈</span><span class="l-en">Qatar · Doha</span></span></div></article>
+<article class="fp-region-card fp-color-oceania" data-region="oceania"><div class="fp-region-header"><div class="fp-region-label"><span class="fp-region-dot"></span><h3><span class="l-zh">大洋洲</span><span class="l-en">Oceania</span></h3></div><span class="fp-region-count">1</span></div><div class="fp-city-tags"><span class="fp-city"><span class="l-zh">澳大利亚 · 悉尼</span><span class="l-en">Australia · Sydney</span></span></div></article>
+<article class="fp-region-card fp-color-america" data-region="america"><div class="fp-region-header"><div class="fp-region-label"><span class="fp-region-dot"></span><h3><span class="l-zh">北美洲</span><span class="l-en">North America</span></h3></div><span class="fp-region-count">1</span></div><div class="fp-city-tags"><span class="fp-city"><span class="l-zh">加拿大 · 埃德蒙顿</span><span class="l-en">Canada · Edmonton</span></span></div></article></div>
+</div>
 </div></div></section>
 <section class="section" id="partners"><div class="container">
 <div class="eyebrow">09 / Collaboration Network</div>
@@ -416,5 +499,19 @@ body{font-size:var(--reading-text);line-height:1.8}
  document.getElementById('langEn')?.addEventListener('click',()=>setTimeout(update,0));
  update();
 })();
-</script></body>
+</script>
+<script>
+(()=>{
+ const root=document.querySelector('#network .fp-infographic');
+ if(!root)return;
+ const buttons=[...root.querySelectorAll('.fp-filter')];
+ const targets=[...root.querySelectorAll('.fp-pin,.fp-map-place,.fp-region-card,.fp-bar-row')];
+ function choose(region){
+  buttons.forEach(b=>{const active=b.dataset.region===region;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active));});
+  targets.forEach(x=>{const on=region==='all'||x.dataset.region===region;x.classList.toggle('fp-dim',!on);x.classList.toggle('fp-highlight',on&&region!=='all'&&x.classList.contains('fp-region-card'));});
+ }
+ buttons.forEach(b=>b.addEventListener('click',()=>choose(b.dataset.region)));
+})();
+</script>
+</body>
 </html>
