@@ -326,6 +326,69 @@ body{font-size:var(--reading-text);line-height:1.8}
 }
 @media(prefers-reduced-motion:reduce){.section-fold-trigger,.fold-symbol{transition:none}}
 
+
+/* Collaboration network infographic */
+.partner-network-viz{border-radius:18px;overflow:hidden;border:1px solid #dce7ef;background:#fff;box-shadow:0 12px 30px rgba(24,62,95,.045)}
+.pn-visual{background:radial-gradient(circle at 51% 40%,#29577b,#163954 65%,#11314d);color:#f7fafc;padding:22px 28px 18px}
+.pn-topline,.pn-visual-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pn-topline{font-size:12px;letter-spacing:.12em;font-weight:750;color:#d3e4ef}
+.pn-total{color:#f5d5a0;white-space:nowrap;letter-spacing:0}
+.pn-network-stage{position:relative;height:355px;max-width:1040px;margin:0 auto}
+.pn-connections{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.pn-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:218px;height:218px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px;padding:14px;border:1px solid rgba(250,216,162,.8);border-radius:50%;background:linear-gradient(150deg,#295a7b,#143b5b);box-shadow:0 0 0 13px rgba(210,184,141,.07),0 0 0 27px rgba(197,219,236,.04),0 17px 40px rgba(0,0,0,.15);z-index:1}
+.pn-center-eyebrow{font-size:10px;letter-spacing:.13em;color:#d7c098;font-weight:800}
+.pn-center-symbol{font-size:25px;color:#e4c388;line-height:1.3;margin:4px 0}
+.pn-center strong{font-size:21px;font-weight:800;color:#fff;line-height:1.4}
+.pn-center-sub{font-size:13px;font-weight:600;color:#c9deec;line-height:1.45}
+.pn-node{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px;width:176px;height:126px;padding:13px 16px;background:#f5f9fc;border:2px solid rgba(225,241,249,.9);border-radius:18px;color:#244967;box-shadow:0 12px 28px rgba(0,0,0,.16);cursor:pointer;z-index:2;font-family:inherit;transition:transform .2s,background .2s,box-shadow .2s}
+.pn-node:hover{transform:translateY(-3px);background:#fff;box-shadow:0 16px 31px rgba(0,0,0,.21)}
+.pn-node:focus-visible{outline:3px solid #e8bd72;outline-offset:3px}
+.pn-node-number{font:700 34px/1 Georgia,serif;letter-spacing:-.03em;color:#2a6b9d}
+.pn-node-label{font-size:14px;font-weight:850;color:#1b3e5d;line-height:1.38}
+.pn-node-hint{font-size:11px;color:#61809a;font-weight:650}
+.pn-node-academic{left:17.9%;top:50%;transform:translate(-50%,-50%);border-top:5px solid #7fbcdf}
+.pn-node-academic:hover{transform:translate(-50%,-53%)}
+.pn-node-textbook{left:83%;top:25%;transform:translate(-50%,-50%);border-top:5px solid #e2b667}
+.pn-node-textbook:hover{transform:translate(-50%,-53%)}
+.pn-node-schools{left:83%;top:75%;transform:translate(-50%,-50%);border-top:5px solid #79c5b5}
+.pn-node-schools:hover{transform:translate(-50%,-53%)}
+.pn-node[aria-expanded=true]{background:#fff;box-shadow:0 0 0 4px rgba(230,188,111,.22),0 14px 35px rgba(0,0,0,.18)}
+.pn-visual-bottom{font-size:11px;color:#aac5d9;line-height:1.5;letter-spacing:.02em}
+.pn-details-list{padding:18px 23px 23px;display:grid;gap:9px;background:#f8fbfd}
+.pn-detail{background:#fff;border:1px solid #dce8f1;border-radius:12px;overflow:hidden}
+.pn-detail-trigger{display:flex;align-items:center;gap:12px;padding:17px 18px;cursor:pointer;list-style:none}
+.pn-detail-trigger::-webkit-details-marker{display:none}
+.pn-detail-trigger::marker{content:""}
+.pn-detail-trigger:hover{background:#f1f6fb}
+.pn-detail-trigger:focus-visible{outline:3px solid #d7a94f;outline-offset:-3px}
+.pn-detail-symbol{height:13px;width:13px;flex:none;border-radius:50%;background:#7fbcdf}
+.pn-detail-textbook .pn-detail-symbol{background:#e2b667}
+.pn-detail-schools .pn-detail-symbol{background:#79c5b5}
+.pn-detail-title{font-size:16px;font-weight:800;color:#254b6b;line-height:1.5;flex:1}
+.pn-detail-amount{font:700 18px Georgia,serif;color:#42789d}
+.pn-detail-chevron{font-size:23px;color:#5081a3;line-height:1;transition:transform .2s;margin-left:7px}
+.pn-detail[open] .pn-detail-chevron{transform:rotate(45deg)}
+.pn-detail-content{border-top:1px solid #e5edf3;padding:18px;background:#fff}
+.pn-partner-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pn-partner{background:#f4f8fb;border:1px solid #e1ebf2;border-radius:10px;padding:13px 14px;min-width:0}
+.pn-partner-name{display:block;color:#203e5a;font-size:15px;font-weight:760;line-height:1.55;overflow-wrap:anywhere}
+.pn-partner-translation{display:block;color:#698298;font-size:12px;line-height:1.45;margin-top:5px;overflow-wrap:anywhere}
+@media(max-width:980px){.pn-node{width:146px;height:114px;padding:10px}.pn-center{width:185px;height:185px}.pn-center strong{font-size:19px}.pn-node-label{font-size:12px}.pn-network-stage{height:332px}}
+@media(max-width:720px){
+.pn-visual{padding:18px 15px}
+.pn-network-stage{height:auto;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:22px 0 15px}
+.pn-connections{display:none}
+.pn-center{position:relative;left:auto;top:auto;transform:none;width:170px;height:170px;grid-column:1/-1;justify-self:center;margin:0 auto 12px}
+.pn-node{position:relative!important;left:auto!important;top:auto!important;transform:none!important;width:100%;height:114px;padding:9px 4px;gap:5px}
+.pn-node:hover{transform:translateY(-3px)!important}
+.pn-node-number{font-size:27px}.pn-node-label{font-size:11px}
+.pn-node-hint{font-size:10px}
+.pn-visual-bottom{display:block}.pn-visual-bottom>span+span{display:none}
+.pn-details-list{padding:13px}.pn-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:500px){.pn-network-stage{grid-template-columns:1fr;gap:9px}.pn-center{width:156px;height:156px;margin-bottom:5px}.pn-center strong{font-size:17px}.pn-center-sub{font-size:12px}.pn-node{width:100%;height:69px;display:grid;grid-template-columns:50px 1fr;grid-template-rows:1fr 1fr;align-items:center;text-align:left;column-gap:10px;padding:9px 14px}.pn-node-number{grid-row:1/3;text-align:center;font-size:28px}.pn-node-label{font-size:13px;align-self:end}.pn-node-hint{font-size:10px;align-self:start}.pn-partner-grid{grid-template-columns:1fr}.pn-detail-trigger{padding:15px}.pn-detail-title{font-size:14px}}
+@media(prefers-reduced-motion:reduce){.pn-node,.pn-detail-chevron{transition:none}}
+
 </style>
 <meta content="portrait.webp" property="og:image"/></head>
 <body data-lang="zh"><a class="sr-only" href="#about" id="skip-to-content">Skip to main content / 跳转正文</a>
@@ -467,22 +530,44 @@ body{font-size:var(--reading-text);line-height:1.8}
 </div></div></details></div></section>
 <section class="section foldable-section" id="partners"><div class="container">
 <div class="eyebrow">09 / Collaboration Network</div>
-<details class="section-fold" data-section-id="partners"><summary class="section-fold-trigger"><div class="section-fold-heading"><h2 class="section-title"><span class="l-zh">主要合作机构与实践伙伴</span><span class="l-en">Collaboration Network & Partners</span></h2><span class="section-fold-teaser"><span class="l-zh">12家主要合作机构与实践伙伴</span><span class="l-en">Twelve collaborating institutions and partners</span></span></div><span class="section-fold-toggle"><span class="fold-state-closed"><span class="l-zh">点击展开</span><span class="l-en">Expand</span></span><span class="fold-state-open"><span class="l-zh">收起内容</span><span class="l-en">Collapse</span></span><span class="fold-symbol" aria-hidden="true">+</span></span></summary><div class="section-fold-body">
-<p class="section-intro"><span class="l-zh">连接高校与研究机构、教材编写平台和基础教育学校，在理论研究、教材建设、教师发展与课堂实践中开展合作交流。</span><span class="l-en">Connecting universities, research institutes, curriculum development platforms, and schools through research, teacher education, and classroom practice.</span></p>
-<div class="partner-groups">
-<div class="partner-group"><h3><span class="l-zh">高校与学术研究机构</span><span class="l-en">Universities & Research Institutes</span></h3><div class="partner-grid"><div class="partner-card"><span class="partner-icon" aria-hidden="true">◈</span><div class="partner-names"><strong><span class="l-zh">北京师范大学</span><span class="l-en">Beijing Normal University</span></strong><span class="partner-english"><span class="l-zh">Beijing Normal University</span><span class="l-en">北京师范大学</span></span></div></div>
-<div class="partner-card"><span class="partner-icon" aria-hidden="true">◈</span><div class="partner-names"><strong><span class="l-zh">都柏林城市大学</span><span class="l-en">Dublin City University</span></strong><span class="partner-english"><span class="l-zh">Dublin City University</span><span class="l-en">都柏林城市大学</span></span></div></div>
-<div class="partner-card"><span class="partner-icon" aria-hidden="true">◈</span><div class="partner-names"><strong><span class="l-zh">荷兰弗莱登塔尔研究所</span><span class="l-en">Freudenthal Institute, Utrecht University</span></strong><span class="partner-english"><span class="l-zh">Freudenthal Institute, Utrecht University</span><span class="l-en">荷兰弗莱登塔尔研究所</span></span></div></div>
-<div class="partner-card"><span class="partner-icon" aria-hidden="true">◈</span><div class="partner-names"><strong><span class="l-zh">国际可能性研究中心</span><span class="l-en">Centre for Possibility Studies</span></strong><span class="partner-english"><span class="l-zh">Centre for Possibility Studies</span><span class="l-en">国际可能性研究中心</span></span></div></div>
-<div class="partner-card"><span class="partner-icon" aria-hidden="true">◈</span><div class="partner-names"><strong><span class="l-zh">南京师范大学</span><span class="l-en">Nanjing Normal University</span></strong><span class="partner-english"><span class="l-zh">Nanjing Normal University</span><span class="l-en">南京师范大学</span></span></div></div>
-<div class="partner-card"><span class="partner-icon" aria-hidden="true">◈</span><div class="partner-names"><strong><span class="l-zh">东北师范大学</span><span class="l-en">Northeast Normal University</span></strong><span class="partner-english"><span class="l-zh">Northeast Normal University</span><span class="l-en">东北师范大学</span></span></div></div>
-<div class="partner-card"><span class="partner-icon" aria-hidden="true">◈</span><div class="partner-names"><strong><span class="l-zh">华南师范大学</span><span class="l-en">South China Normal University</span></strong><span class="partner-english"><span class="l-zh">South China Normal University</span><span class="l-en">华南师范大学</span></span></div></div>
-<div class="partner-card"><span class="partner-icon" aria-hidden="true">◈</span><div class="partner-names"><strong><span class="l-zh">天津师范大学</span><span class="l-en">Tianjin Normal University</span></strong><span class="partner-english"><span class="l-zh">Tianjin Normal University</span><span class="l-en">天津师范大学</span></span></div></div>
-<div class="partner-card"><span class="partner-icon" aria-hidden="true">◈</span><div class="partner-names"><strong><span class="l-zh">浙江师范大学</span><span class="l-en">Zhejiang Normal University</span></strong><span class="partner-english"><span class="l-zh">Zhejiang Normal University</span><span class="l-en">浙江师范大学</span></span></div></div></div></div>
-<div class="partner-group"><h3><span class="l-zh">教材编写与教研平台</span><span class="l-en">Curriculum & Teaching Research</span></h3><div class="partner-grid"><div class="partner-card"><span class="partner-icon" aria-hidden="true">▤</span><div class="partner-names"><strong><span class="l-zh">北师大版小学数学教材编委会</span><span class="l-en">Editorial Committee of BNU Primary Mathematics Textbooks</span></strong><span class="partner-english"><span class="l-zh">Editorial Committee of BNU Primary Mathematics Textbooks</span><span class="l-en">北师大版小学数学教材编委会</span></span></div></div></div></div>
-<div class="partner-group"><h3><span class="l-zh">基础教育实践学校</span><span class="l-en">Partner Schools</span></h3><div class="partner-grid"><div class="partner-card"><span class="partner-icon" aria-hidden="true">⌂</span><div class="partner-names"><strong><span class="l-zh">珠海十六中</span><span class="l-en">Zhuhai No. 16 Middle School</span></strong><span class="partner-english"><span class="l-zh">Zhuhai No. 16 Middle School</span><span class="l-en">珠海十六中</span></span></div></div>
-<div class="partner-card"><span class="partner-icon" aria-hidden="true">⌂</span><div class="partner-names"><strong><span class="l-zh">深圳红岭实验小学</span><span class="l-en">Hongling Experimental Primary School, Shenzhen</span></strong><span class="partner-english"><span class="l-zh">Hongling Experimental Primary School, Shenzhen</span><span class="l-en">深圳红岭实验小学</span></span></div></div></div></div>
-</div></div></details></div></section>
+<details class="section-fold" data-section-id="partners"><summary class="section-fold-trigger"><div class="section-fold-heading">
+<h2 class="section-title"><span class="l-zh">主要合作机构与实践伙伴</span><span class="l-en">Collaboration Network & Partners</span></h2>
+<span class="section-fold-teaser"><span class="l-zh">12家机构 · 3类学术合作与实践联结</span><span class="l-en">12 partners · Three collaboration areas</span></span>
+</div><span class="section-fold-toggle"><span class="fold-state-closed"><span class="l-zh">点击展开</span><span class="l-en">Expand</span></span><span class="fold-state-open"><span class="l-zh">收起内容</span><span class="l-en">Collapse</span></span><span class="fold-symbol" aria-hidden="true">+</span></span></summary>
+<div class="section-fold-body">
+<p class="section-intro"><span class="l-zh">围绕团队创造力与数学教育，与高校研究机构、教材平台及中小学合作伙伴开展科研交流、课程教材建设和教育实践。点击网络节点，查看具体机构。</span><span class="l-en">Research exchange, curriculum development and educational practice connect my work with academic institutes, textbook development groups and schools. Select a node to explore partners.</span></p>
+<div class="partner-network-viz">
+<div class="pn-visual"><div class="pn-topline"><span class="pn-overline"><span class="l-zh">学术合作网络</span><span class="l-en">COLLABORATION NETWORK</span></span><span class="pn-total"><span class="l-zh">12家机构</span><span class="l-en">12 Partners</span></span></div>
+<div class="pn-network-stage">
+<svg class="pn-connections" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true">
+<defs><linearGradient id="pn-conn-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8cc5e2"/><stop offset=".53" stop-color="#e5bf7a"/><stop offset="1" stop-color="#a8d7ca"/></linearGradient></defs>
+<g class="pn-sky-dots" fill="#93bed7" opacity=".32"><circle cx="88" cy="72" r="2.7"/><circle cx="140" cy="364" r="2"/><circle cx="285" cy="84" r="2.5"/><circle cx="750" cy="340" r="2"/><circle cx="892" cy="92" r="3"/><circle cx="940" cy="385" r="2.5"/></g>
+<g fill="none" stroke="url(#pn-conn-grad)" stroke-linecap="round">
+<path d="M500 220 C365 180 301 175 179 220" stroke-width="3.5" stroke-dasharray="7 9"/>
+<path d="M500 220 C640 184 726 117 830 119" stroke-width="3.5" stroke-dasharray="7 9"/>
+<path d="M500 220 C649 266 741 325 830 326" stroke-width="3.5" stroke-dasharray="7 9"/>
+</g>
+<g fill="#d8b16d"><circle cx="179" cy="220" r="5"/><circle cx="830" cy="119" r="5"/><circle cx="830" cy="326" r="5"/></g>
+</svg>
+<div class="pn-center"><span class="pn-center-eyebrow">YAOYAO DONG</span><span class="pn-center-symbol" aria-hidden="true">✦</span><strong><span class="l-zh">数学教育</span><span class="l-en">Mathematics Education</span></strong><span class="pn-center-sub"><span class="l-zh">团队创造力研究</span><span class="l-en">Group Creativity Research</span></span></div>
+<button type="button" class="pn-node pn-node-academic" data-pn-target="academic" aria-controls="pn-content-academic" aria-expanded="false"><span class="pn-node-number">09</span><span class="pn-node-label"><span class="l-zh">高校与研究机构</span><span class="l-en">Academic Institutions</span></span><span class="pn-node-hint"><span class="l-zh">点击查看机构</span><span class="l-en">Explore partners</span> <span aria-hidden="true">↗</span></span></button><button type="button" class="pn-node pn-node-textbook" data-pn-target="textbook" aria-controls="pn-content-textbook" aria-expanded="false"><span class="pn-node-number">01</span><span class="pn-node-label"><span class="l-zh">教材编写平台</span><span class="l-en">Curriculum Platform</span></span><span class="pn-node-hint"><span class="l-zh">点击查看机构</span><span class="l-en">Explore partners</span> <span aria-hidden="true">↗</span></span></button><button type="button" class="pn-node pn-node-schools" data-pn-target="schools" aria-controls="pn-content-schools" aria-expanded="false"><span class="pn-node-number">02</span><span class="pn-node-label"><span class="l-zh">基础教育学校</span><span class="l-en">Partner Schools</span></span><span class="pn-node-hint"><span class="l-zh">点击查看机构</span><span class="l-en">Explore partners</span> <span aria-hidden="true">↗</span></span></button>
+</div>
+<div class="pn-visual-bottom"><span><span class="l-zh">三类合作方向 · 点击节点查看机构</span><span class="l-en">Three groups · Select a node for details</span></span><span>RESEARCH · CURRICULUM · SCHOOLS</span></div>
+</div>
+<div class="pn-details-list"><details class="pn-detail pn-detail-academic" data-pn-group="academic" id="pn-content-academic">
+<summary class="pn-detail-trigger"><span class="pn-detail-symbol" aria-hidden="true"></span><span class="pn-detail-title"><span class="l-zh">高校与学术研究机构</span><span class="l-en">Universities & Research Institutes</span></span><span class="pn-detail-amount">9</span><span class="pn-detail-chevron" aria-hidden="true">+</span></summary>
+<div class="pn-detail-content"><div class="pn-partner-grid"><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">北京师范大学</span><span class="l-en">Beijing Normal University</span></span><span class="pn-partner-translation"><span class="l-zh">Beijing Normal University</span><span class="l-en">北京师范大学</span></span></div><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">都柏林城市大学</span><span class="l-en">Dublin City University</span></span><span class="pn-partner-translation"><span class="l-zh">Dublin City University</span><span class="l-en">都柏林城市大学</span></span></div><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">荷兰弗莱登塔尔研究所</span><span class="l-en">Freudenthal Institute, Utrecht University</span></span><span class="pn-partner-translation"><span class="l-zh">Freudenthal Institute, Utrecht University</span><span class="l-en">荷兰弗莱登塔尔研究所</span></span></div><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">国际可能性研究中心</span><span class="l-en">Centre for Possibility Studies</span></span><span class="pn-partner-translation"><span class="l-zh">Centre for Possibility Studies</span><span class="l-en">国际可能性研究中心</span></span></div><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">南京师范大学</span><span class="l-en">Nanjing Normal University</span></span><span class="pn-partner-translation"><span class="l-zh">Nanjing Normal University</span><span class="l-en">南京师范大学</span></span></div><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">东北师范大学</span><span class="l-en">Northeast Normal University</span></span><span class="pn-partner-translation"><span class="l-zh">Northeast Normal University</span><span class="l-en">东北师范大学</span></span></div><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">华南师范大学</span><span class="l-en">South China Normal University</span></span><span class="pn-partner-translation"><span class="l-zh">South China Normal University</span><span class="l-en">华南师范大学</span></span></div><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">天津师范大学</span><span class="l-en">Tianjin Normal University</span></span><span class="pn-partner-translation"><span class="l-zh">Tianjin Normal University</span><span class="l-en">天津师范大学</span></span></div><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">浙江师范大学</span><span class="l-en">Zhejiang Normal University</span></span><span class="pn-partner-translation"><span class="l-zh">Zhejiang Normal University</span><span class="l-en">浙江师范大学</span></span></div></div></div>
+</details>
+<details class="pn-detail pn-detail-textbook" data-pn-group="textbook" id="pn-content-textbook">
+<summary class="pn-detail-trigger"><span class="pn-detail-symbol" aria-hidden="true"></span><span class="pn-detail-title"><span class="l-zh">教材编写与教研平台</span><span class="l-en">Curriculum & Teaching Research</span></span><span class="pn-detail-amount">1</span><span class="pn-detail-chevron" aria-hidden="true">+</span></summary>
+<div class="pn-detail-content"><div class="pn-partner-grid"><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">北师大版小学数学教材编委会</span><span class="l-en">Editorial Committee of BNU Primary Mathematics Textbooks</span></span><span class="pn-partner-translation"><span class="l-zh">Editorial Committee of BNU Primary Mathematics Textbooks</span><span class="l-en">北师大版小学数学教材编委会</span></span></div></div></div>
+</details>
+<details class="pn-detail pn-detail-schools" data-pn-group="schools" id="pn-content-schools">
+<summary class="pn-detail-trigger"><span class="pn-detail-symbol" aria-hidden="true"></span><span class="pn-detail-title"><span class="l-zh">基础教育实践学校</span><span class="l-en">Partner Schools</span></span><span class="pn-detail-amount">2</span><span class="pn-detail-chevron" aria-hidden="true">+</span></summary>
+<div class="pn-detail-content"><div class="pn-partner-grid"><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">珠海十六中</span><span class="l-en">Zhuhai No. 16 Middle School</span></span><span class="pn-partner-translation"><span class="l-zh">Zhuhai No. 16 Middle School</span><span class="l-en">珠海十六中</span></span></div><div class="pn-partner"><span class="pn-partner-name"><span class="l-zh">深圳红岭实验小学</span><span class="l-en">Hongling Experimental Primary School, Shenzhen</span></span><span class="pn-partner-translation"><span class="l-zh">Hongling Experimental Primary School, Shenzhen</span><span class="l-en">深圳红岭实验小学</span></span></div></div></div>
+</details></div>
+</div>
+</div></details></div></section>
 <section class="section alt foldable-section" id="talks"><div class="container"><div class="eyebrow">10 / Selected Conferences</div><details class="section-fold" data-section-id="talks"><summary class="section-fold-trigger"><div class="section-fold-heading"><h2 class="section-title"><span class="l-zh">国际学术会议与报告</span><span class="l-en">International Conferences &amp; Presentations</span></h2><span class="section-fold-teaser"><span class="l-zh">11项会议报告与受邀交流</span><span class="l-en">Eleven presentations and invited exchanges</span></span></div><span class="section-fold-toggle"><span class="fold-state-closed"><span class="l-zh">点击展开</span><span class="l-en">Expand</span></span><span class="fold-state-open"><span class="l-zh">收起内容</span><span class="l-en">Collapse</span></span><span class="fold-symbol" aria-hidden="true">+</span></span></summary><div class="section-fold-body"><p class="section-intro"><span class="l-zh">国际会议中的学术报告、海报展示与受邀代表交流。</span><span class="l-en">Academic presentations, posters and invited participation at international conferences.</span></p><h3 class="subheading"><span class="l-zh">学术报告与受邀交流</span><span class="l-en">Research Presentations &amp; Invited Participation</span></h3><div class="talks-list">
 <article class="talk-row"><div class="talk-date">2026.10</div><div class="talk-body">
 <div class="talk-location"><span class="l-zh">中国 · 苏州 · 苏州大学实验学校</span><span class="l-en">Suzhou · China · Soochow University Experimental School</span> · <span class="l-zh">受邀代表参会</span><span class="l-en">Invited delegate</span></div>
@@ -575,5 +660,25 @@ body{font-size:var(--reading-text);line-height:1.8}
   followHash();
 })();
 </script>
+
+<script>
+(()=>{
+const section=document.querySelector('#partners');
+if(!section)return;
+const network=section.querySelector('.partner-network-viz');
+const nodes=[...network.querySelectorAll('button.pn-node')];
+const groups=[...network.querySelectorAll('details.pn-detail')];
+function update(){nodes.forEach(node=>{const target=groups.find(group=>group.dataset.pnGroup===node.dataset.pnTarget);node.setAttribute('aria-expanded',String(!!target?.open));});}
+nodes.forEach(node=>node.addEventListener('click',()=>{
+const group=groups.find(g=>g.dataset.pnGroup===node.dataset.pnTarget);
+if(!group)return;
+const next=!group.open;groups.forEach(g=>{g.open=false;});group.open=next;update();
+if(next){group.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'});}
+}));
+groups.forEach(group=>group.addEventListener('toggle',()=>{if(group.open)groups.forEach(g=>{if(g!==group&&g.open)g.open=false;});update();}));
+update();
+})();
+</script>
+
 </body>
 </html>
