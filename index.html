@@ -327,66 +327,88 @@ body{font-size:var(--reading-text);line-height:1.8}
 @media(prefers-reduced-motion:reduce){.section-fold-trigger,.fold-symbol{transition:none}}
 
 
-/* Collaboration network infographic */
-.partner-network-viz{border-radius:18px;overflow:hidden;border:1px solid #dce7ef;background:#fff;box-shadow:0 12px 30px rgba(24,62,95,.045)}
-.pn-visual{background:radial-gradient(circle at 51% 40%,#29577b,#163954 65%,#11314d);color:#f7fafc;padding:22px 28px 18px}
-.pn-topline,.pn-visual-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.pn-topline{font-size:12px;letter-spacing:.12em;font-weight:750;color:#d3e4ef}
-.pn-total{color:#f5d5a0;white-space:nowrap;letter-spacing:0}
-.pn-network-stage{position:relative;height:355px;max-width:1040px;margin:0 auto}
-.pn-connections{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.pn-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:218px;height:218px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px;padding:14px;border:1px solid rgba(250,216,162,.8);border-radius:50%;background:linear-gradient(150deg,#295a7b,#143b5b);box-shadow:0 0 0 13px rgba(210,184,141,.07),0 0 0 27px rgba(197,219,236,.04),0 17px 40px rgba(0,0,0,.15);z-index:1}
-.pn-center-eyebrow{font-size:10px;letter-spacing:.13em;color:#d7c098;font-weight:800}
-.pn-center-symbol{font-size:25px;color:#e4c388;line-height:1.3;margin:4px 0}
-.pn-center strong{font-size:21px;font-weight:800;color:#fff;line-height:1.4}
-.pn-center-sub{font-size:13px;font-weight:600;color:#c9deec;line-height:1.45}
-.pn-node{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px;width:176px;height:126px;padding:13px 16px;background:#f5f9fc;border:2px solid rgba(225,241,249,.9);border-radius:18px;color:#244967;box-shadow:0 12px 28px rgba(0,0,0,.16);cursor:pointer;z-index:2;font-family:inherit;transition:transform .2s,background .2s,box-shadow .2s}
-.pn-node:hover{transform:translateY(-3px);background:#fff;box-shadow:0 16px 31px rgba(0,0,0,.21)}
-.pn-node:focus-visible{outline:3px solid #e8bd72;outline-offset:3px}
-.pn-node-number{font:700 34px/1 Georgia,serif;letter-spacing:-.03em;color:#2a6b9d}
-.pn-node-label{font-size:14px;font-weight:850;color:#1b3e5d;line-height:1.38}
-.pn-node-hint{font-size:11px;color:#61809a;font-weight:650}
-.pn-node-academic{left:17.9%;top:50%;transform:translate(-50%,-50%);border-top:5px solid #7fbcdf}
-.pn-node-academic:hover{transform:translate(-50%,-53%)}
-.pn-node-textbook{left:83%;top:25%;transform:translate(-50%,-50%);border-top:5px solid #e2b667}
-.pn-node-textbook:hover{transform:translate(-50%,-53%)}
-.pn-node-schools{left:83%;top:75%;transform:translate(-50%,-50%);border-top:5px solid #79c5b5}
-.pn-node-schools:hover{transform:translate(-50%,-53%)}
-.pn-node[aria-expanded=true]{background:#fff;box-shadow:0 0 0 4px rgba(230,188,111,.22),0 14px 35px rgba(0,0,0,.18)}
-.pn-visual-bottom{font-size:11px;color:#aac5d9;line-height:1.5;letter-spacing:.02em}
-.pn-details-list{padding:18px 23px 23px;display:grid;gap:9px;background:#f8fbfd}
-.pn-detail{background:#fff;border:1px solid #dce8f1;border-radius:12px;overflow:hidden}
-.pn-detail-trigger{display:flex;align-items:center;gap:12px;padding:17px 18px;cursor:pointer;list-style:none}
+
+/* Collaboration network: a compact hierarchy with readable partners */
+.partner-network-viz{border:1px solid #dae6ef;border-radius:17px;overflow:hidden;background:#fff;box-shadow:0 10px 27px rgba(24,62,95,.045)}
+.pn-visual{padding:22px 25px 20px;color:#f5f8fc;background:linear-gradient(135deg,#153b5d 0%,#1d4e71 100%)}
+.pn-topline,.pn-visual-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pn-topline{font-size:12px;letter-spacing:.10em;font-weight:760;color:#d5e5ef}
+.pn-total{color:#eacb91;letter-spacing:0;white-space:nowrap}
+.pn-network-stage{display:grid;grid-template-columns:minmax(0,.92fr) 67px minmax(0,1.6fr);align-items:center;gap:0;max-width:1020px;margin:0 auto;padding:24px 0}
+.pn-core{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:10px;min-width:0;min-height:169px;padding:25px 23px;border:1px solid rgba(237,210,158,.7);border-left:4px solid #e6bf7f;border-radius:15px;background:rgba(255,255,255,.075)}
+.pn-core-kicker{font-size:11px;font-weight:750;letter-spacing:.10em;color:#e0c68e;line-height:1.6}
+.pn-core strong{font-size:clamp(23px,2.45vw,30px);font-weight:800;line-height:1.35;color:#fff}
+.pn-core-caption{font-size:13px;line-height:1.65;color:#d5e4ee}
+.pn-connector{height:2px;width:100%;background:#b5d3e4;position:relative;opacity:.9}
+.pn-connector:after{content:"";position:absolute;right:0;top:-83px;width:2px;height:166px;background:#b5d3e4}
+.pn-branches{display:grid;gap:12px;position:relative}
+.pn-node{position:relative;display:grid;grid-template-columns:62px minmax(0,1fr) auto;align-items:center;gap:16px;padding:15px 17px;background:#fff;border:1px solid #dce8f2;border-left:5px solid var(--pn-tone,#94c5de);border-radius:12px;text-align:left;cursor:pointer;font-family:inherit;min-width:0;min-height:91px;color:#1c415e;box-shadow:0 6px 17px rgba(4,25,46,.10);transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.pn-node:before{content:"";position:absolute;left:-17px;width:16px;height:2px;background:#b5d3e4;top:50%;pointer-events:none}
+.pn-node-academic{--pn-tone:#87c8e3}
+.pn-node-textbook{--pn-tone:#dfb570}
+.pn-node-schools{--pn-tone:#84c9bb}
+.pn-node-number{font:700 33px/1 Georgia,serif;color:#27658e}
+.pn-node-text{display:flex;flex-direction:column;gap:5px;min-width:0}
+.pn-node-label{font-size:16px;font-weight:850;color:#183d59;line-height:1.45}
+.pn-node-desc{font-size:12px;line-height:1.5;color:#637f94}
+.pn-node-action{font-size:12px;font-weight:750;color:#336f98;white-space:nowrap}
+.pn-node:hover{background:#f6fafd;transform:translateY(-2px);box-shadow:0 9px 22px rgba(4,25,46,.16)}
+.pn-node[aria-expanded=true]{background:#ebf5fc;border-color:#9dc2d9;box-shadow:0 0 0 2px rgba(167,212,239,.22)}
+.pn-node:focus-visible{outline:3px solid #e5bd75;outline-offset:3px}
+.pn-visual-bottom{font-size:12px;line-height:1.6;color:#bdd4e5}
+.pn-visual-bottom>span+span{font-size:10px;letter-spacing:.10em}
+.pn-details-list{padding:17px 20px 21px;display:grid;gap:9px;background:#f8fafc}
+.pn-detail{border:1px solid #dde9f2;background:#fff;border-radius:11px;overflow:hidden}
+.pn-detail-trigger{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;padding:16px 19px}
 .pn-detail-trigger::-webkit-details-marker{display:none}
 .pn-detail-trigger::marker{content:""}
-.pn-detail-trigger:hover{background:#f1f6fb}
-.pn-detail-trigger:focus-visible{outline:3px solid #d7a94f;outline-offset:-3px}
-.pn-detail-symbol{height:13px;width:13px;flex:none;border-radius:50%;background:#7fbcdf}
-.pn-detail-textbook .pn-detail-symbol{background:#e2b667}
-.pn-detail-schools .pn-detail-symbol{background:#79c5b5}
-.pn-detail-title{font-size:16px;font-weight:800;color:#254b6b;line-height:1.5;flex:1}
-.pn-detail-amount{font:700 18px Georgia,serif;color:#42789d}
-.pn-detail-chevron{font-size:23px;color:#5081a3;line-height:1;transition:transform .2s;margin-left:7px}
+.pn-detail-trigger:hover{background:#f3f8fb}
+.pn-detail-trigger:focus-visible{outline:3px solid #e3b76b;outline-offset:-3px}
+.pn-detail-symbol{flex:none;width:11px;height:11px;border-radius:50%;background:#87c8e3}
+.pn-detail-textbook .pn-detail-symbol{background:#dfb570}
+.pn-detail-schools .pn-detail-symbol{background:#84c9bb}
+.pn-detail-title{flex:1;font-size:15px;font-weight:800;color:#254c69;line-height:1.5}
+.pn-detail-amount{font:700 19px Georgia,serif;color:#397199}
+.pn-detail-chevron{font-size:24px;color:#4782a7;line-height:1;transition:transform .2s;margin-left:5px}
 .pn-detail[open] .pn-detail-chevron{transform:rotate(45deg)}
-.pn-detail-content{border-top:1px solid #e5edf3;padding:18px;background:#fff}
+.pn-detail-content{border-top:1px solid #e5edf3;padding:17px;background:#fff}
 .pn-partner-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.pn-partner{background:#f4f8fb;border:1px solid #e1ebf2;border-radius:10px;padding:13px 14px;min-width:0}
+.pn-partner{background:#f5f9fc;border:1px solid #e0eaf2;border-radius:9px;padding:13px 14px;min-width:0}
 .pn-partner-name{display:block;color:#203e5a;font-size:15px;font-weight:760;line-height:1.55;overflow-wrap:anywhere}
-.pn-partner-translation{display:block;color:#698298;font-size:12px;line-height:1.45;margin-top:5px;overflow-wrap:anywhere}
-@media(max-width:980px){.pn-node{width:146px;height:114px;padding:10px}.pn-center{width:185px;height:185px}.pn-center strong{font-size:19px}.pn-node-label{font-size:12px}.pn-network-stage{height:332px}}
-@media(max-width:720px){
-.pn-visual{padding:18px 15px}
-.pn-network-stage{height:auto;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:22px 0 15px}
-.pn-connections{display:none}
-.pn-center{position:relative;left:auto;top:auto;transform:none;width:170px;height:170px;grid-column:1/-1;justify-self:center;margin:0 auto 12px}
-.pn-node{position:relative!important;left:auto!important;top:auto!important;transform:none!important;width:100%;height:114px;padding:9px 4px;gap:5px}
-.pn-node:hover{transform:translateY(-3px)!important}
-.pn-node-number{font-size:27px}.pn-node-label{font-size:11px}
-.pn-node-hint{font-size:10px}
-.pn-visual-bottom{display:block}.pn-visual-bottom>span+span{display:none}
-.pn-details-list{padding:13px}.pn-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pn-partner-translation{display:block;color:#698298;font-size:12px;line-height:1.45;margin-top:4px;overflow-wrap:anywhere}
+@media(max-width:960px){
+.pn-network-stage{grid-template-columns:minmax(0,.9fr) 44px minmax(0,1.6fr)}
+.pn-core{padding:20px 16px}
+.pn-node{grid-template-columns:47px minmax(0,1fr);gap:10px;padding:12px}
+.pn-node-number{font-size:27px}
+.pn-node-label{font-size:14px}
+.pn-node-action{grid-column:2;font-size:11px;margin-top:-6px}
 }
-@media(max-width:500px){.pn-network-stage{grid-template-columns:1fr;gap:9px}.pn-center{width:156px;height:156px;margin-bottom:5px}.pn-center strong{font-size:17px}.pn-center-sub{font-size:12px}.pn-node{width:100%;height:69px;display:grid;grid-template-columns:50px 1fr;grid-template-rows:1fr 1fr;align-items:center;text-align:left;column-gap:10px;padding:9px 14px}.pn-node-number{grid-row:1/3;text-align:center;font-size:28px}.pn-node-label{font-size:13px;align-self:end}.pn-node-hint{font-size:10px;align-self:start}.pn-partner-grid{grid-template-columns:1fr}.pn-detail-trigger{padding:15px}.pn-detail-title{font-size:14px}}
+@media(max-width:700px){
+.pn-visual{padding:18px 16px}
+.pn-network-stage{grid-template-columns:1fr;gap:11px;padding:20px 0 16px}
+.pn-core{min-height:auto;gap:5px;padding:16px 19px}
+.pn-core strong{font-size:23px}
+.pn-connector{display:none}
+.pn-branches{gap:10px}
+.pn-node{min-height:75px;grid-template-columns:48px minmax(0,1fr) auto;padding:12px}
+.pn-node:before{display:none}
+.pn-node-action{grid-column:auto;margin-top:0}
+.pn-node-label{font-size:14px}
+.pn-node-desc{font-size:11px}
+.pn-visual-bottom>span+span{display:none}
+.pn-partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:520px){
+.pn-node{grid-template-columns:40px minmax(0,1fr);gap:8px}
+.pn-node-number{font-size:25px}
+.pn-node-action{grid-column:2;margin-top:-5px}
+.pn-node-desc{font-size:11px}
+.pn-details-list{padding:12px}
+.pn-partner-grid{grid-template-columns:1fr}
+.pn-detail-trigger{padding:14px}
+.pn-detail-title{font-size:14px}
+}
 @media(prefers-reduced-motion:reduce){.pn-node,.pn-detail-chevron{transition:none}}
 
 </style>
@@ -539,18 +561,29 @@ body{font-size:var(--reading-text);line-height:1.8}
 <div class="partner-network-viz">
 <div class="pn-visual"><div class="pn-topline"><span class="pn-overline"><span class="l-zh">学术合作网络</span><span class="l-en">COLLABORATION NETWORK</span></span><span class="pn-total"><span class="l-zh">12家机构</span><span class="l-en">12 Partners</span></span></div>
 <div class="pn-network-stage">
-<svg class="pn-connections" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true">
-<defs><linearGradient id="pn-conn-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8cc5e2"/><stop offset=".53" stop-color="#e5bf7a"/><stop offset="1" stop-color="#a8d7ca"/></linearGradient></defs>
-<g class="pn-sky-dots" fill="#93bed7" opacity=".32"><circle cx="88" cy="72" r="2.7"/><circle cx="140" cy="364" r="2"/><circle cx="285" cy="84" r="2.5"/><circle cx="750" cy="340" r="2"/><circle cx="892" cy="92" r="3"/><circle cx="940" cy="385" r="2.5"/></g>
-<g fill="none" stroke="url(#pn-conn-grad)" stroke-linecap="round">
-<path d="M500 220 C365 180 301 175 179 220" stroke-width="3.5" stroke-dasharray="7 9"/>
-<path d="M500 220 C640 184 726 117 830 119" stroke-width="3.5" stroke-dasharray="7 9"/>
-<path d="M500 220 C649 266 741 325 830 326" stroke-width="3.5" stroke-dasharray="7 9"/>
-</g>
-<g fill="#d8b16d"><circle cx="179" cy="220" r="5"/><circle cx="830" cy="119" r="5"/><circle cx="830" cy="326" r="5"/></g>
-</svg>
-<div class="pn-center"><span class="pn-center-eyebrow">YAOYAO DONG</span><span class="pn-center-symbol" aria-hidden="true">✦</span><strong><span class="l-zh">数学教育</span><span class="l-en">Mathematics Education</span></strong><span class="pn-center-sub"><span class="l-zh">团队创造力研究</span><span class="l-en">Group Creativity Research</span></span></div>
-<button type="button" class="pn-node pn-node-academic" data-pn-target="academic" aria-controls="pn-content-academic" aria-expanded="false"><span class="pn-node-number">09</span><span class="pn-node-label"><span class="l-zh">高校与研究机构</span><span class="l-en">Academic Institutions</span></span><span class="pn-node-hint"><span class="l-zh">点击查看机构</span><span class="l-en">Explore partners</span> <span aria-hidden="true">↗</span></span></button><button type="button" class="pn-node pn-node-textbook" data-pn-target="textbook" aria-controls="pn-content-textbook" aria-expanded="false"><span class="pn-node-number">01</span><span class="pn-node-label"><span class="l-zh">教材编写平台</span><span class="l-en">Curriculum Platform</span></span><span class="pn-node-hint"><span class="l-zh">点击查看机构</span><span class="l-en">Explore partners</span> <span aria-hidden="true">↗</span></span></button><button type="button" class="pn-node pn-node-schools" data-pn-target="schools" aria-controls="pn-content-schools" aria-expanded="false"><span class="pn-node-number">02</span><span class="pn-node-label"><span class="l-zh">基础教育学校</span><span class="l-en">Partner Schools</span></span><span class="pn-node-hint"><span class="l-zh">点击查看机构</span><span class="l-en">Explore partners</span> <span aria-hidden="true">↗</span></span></button>
+  <div class="pn-core">
+    <span class="pn-core-kicker"><span class="l-zh">研究与合作</span><span class="l-en">RESEARCH & COLLABORATION</span></span>
+    <strong><span class="l-zh">董瑶瑶</span><span class="l-en">Yaoyao Dong</span></strong>
+    <span class="pn-core-caption"><span class="l-zh">数学教育 · 团队创造力</span><span class="l-en">Mathematics Education · Group Creativity</span></span>
+  </div>
+  <div class="pn-connector" aria-hidden="true"></div>
+  <div class="pn-branches">
+    <button type="button" class="pn-node pn-node-academic" data-pn-target="academic" aria-controls="pn-content-academic" aria-expanded="false">
+      <span class="pn-node-number">09</span>
+      <span class="pn-node-text"><span class="pn-node-label"><span class="l-zh">高校与学术研究机构</span><span class="l-en">Universities & Research Institutes</span></span><span class="pn-node-desc"><span class="l-zh">高校、科研院所与研究中心</span><span class="l-en">Universities, institutes & research centers</span></span></span>
+      <span class="pn-node-action"><span class="l-zh">查看</span><span class="l-en">View</span> <span aria-hidden="true">↗</span></span>
+    </button>
+<button type="button" class="pn-node pn-node-textbook" data-pn-target="textbook" aria-controls="pn-content-textbook" aria-expanded="false">
+      <span class="pn-node-number">01</span>
+      <span class="pn-node-text"><span class="pn-node-label"><span class="l-zh">教材编写与教研平台</span><span class="l-en">Curriculum & Teaching Research</span></span><span class="pn-node-desc"><span class="l-zh">数学教材编写与教学研究</span><span class="l-en">Mathematics textbooks & teaching research</span></span></span>
+      <span class="pn-node-action"><span class="l-zh">查看</span><span class="l-en">View</span> <span aria-hidden="true">↗</span></span>
+    </button>
+<button type="button" class="pn-node pn-node-schools" data-pn-target="schools" aria-controls="pn-content-schools" aria-expanded="false">
+      <span class="pn-node-number">02</span>
+      <span class="pn-node-text"><span class="pn-node-label"><span class="l-zh">基础教育实践学校</span><span class="l-en">Partner Schools</span></span><span class="pn-node-desc"><span class="l-zh">中小学课堂与实践合作</span><span class="l-en">Primary & secondary school partnerships</span></span></span>
+      <span class="pn-node-action"><span class="l-zh">查看</span><span class="l-en">View</span> <span aria-hidden="true">↗</span></span>
+    </button>
+  </div>
 </div>
 <div class="pn-visual-bottom"><span><span class="l-zh">三类合作方向 · 点击节点查看机构</span><span class="l-en">Three groups · Select a node for details</span></span><span>RESEARCH · CURRICULUM · SCHOOLS</span></div>
 </div>
